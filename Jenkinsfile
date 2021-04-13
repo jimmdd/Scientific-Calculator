@@ -13,13 +13,10 @@ pipeline {
         echo 'Junit testing'
         sh 'cd Calculator && mvn test'
         echo 'Static testing'
-        withSonarQubeEnv('My SonarQube Server') {
-          sh '''mvn sonar:sonar \\
-  -Dsonar.projectKey=calculator \\
-  -Dsonar.host.url=http://localhost:9000 \\
-  -Dsonar.login=jenkins'''
-        }
-
+        sh 'mvn sonar:sonar \
+  -Dsonar.projectKey=calculator \
+  -Dsonar.host.url=http://localhost:9000 \
+  -Dsonar.login=jenkins'
       }
     }
 
