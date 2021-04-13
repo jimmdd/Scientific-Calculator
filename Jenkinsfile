@@ -14,7 +14,7 @@ pipeline {
         sh 'cd Calculator && mvn test'
         echo 'Static testing'
         sh 'cd Calculator && mvn sonar:sonar \
-  -Dsonar.projectKey=calculator \
+  -Dsonar.projectKey=io.michaelcane:bestcalculator \
   -Dsonar.host.url=http://192.168.86.219:9000 \
   -Dsonar.login=jenkins'
       }
