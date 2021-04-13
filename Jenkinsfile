@@ -18,7 +18,7 @@ pipeline {
     stage('Static analysis') {
       steps {
         echo 'Static testing'
-        sh 'cd Calculator && mvn sonar:sonar 
+        sh 'cd Calculator && mvn sonar:sonar'
         echo 'pwd'
       }
     }
