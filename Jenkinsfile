@@ -14,11 +14,15 @@ pipeline {
         sh 'cd Calculator && mvn test'
         echo 'Static testing'
         withSonarQubeEnv('My SonarQube Server') {
-          sh 'mvn clean package sonar:sonar'
+          sh '''mvn sonar:sonar \\
+  -Dsonar.projectKey=calculator \\
+  -Dsonar.host.url=http://localhost:9000 \\
+  -Dsonar.login=jenkins'''
         }
+
       }
     }
-    
+
     stage('Deploy') {
       steps {
         echo 'Deploy'
