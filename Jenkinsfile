@@ -13,7 +13,7 @@ pipeline {
         echo 'Junit testing'
         sh 'cd Calculator && mvn test'
         echo 'Static testing'
-        sh 'mvn sonar:sonar \
+        sh 'cd Calculator && mvn sonar:sonar \
   -Dsonar.projectKey=calculator \
   -Dsonar.host.url=http://localhost:9000 \
   -Dsonar.login=jenkins'
