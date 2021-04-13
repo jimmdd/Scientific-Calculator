@@ -18,7 +18,10 @@ pipeline {
     stage('Static analysis') {
       steps {
         echo 'Static testing'
-        sh 'cd Calculator && mvn sonar:sonar'
+       sh 'cd Calculator && mvn sonar:sonar \
+        -Dsonar.projectKey=io.michaelcane:bestcalculator \
+         -Dsonar.host.url=http://192.168.86.219:9000 \
+          -Dsonar.login=be4f8636dabc8cd1c118d3f1716e47a1f7b71927'
         echo 'pwd'
       }
     }
