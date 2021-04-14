@@ -1,6 +1,5 @@
 package io.michaelcane;
 
-
 public class Calculator {
 
     Commands commands = new Commands();
@@ -11,26 +10,26 @@ public class Calculator {
      */
     public static double sum(double value1, double value2) {
         /**
-         * This method should take two values (double)
-         * and adds them together, returning the new value.
+         * This method should take two values (double) and adds them together, returning
+         * the new value.
          */
         return value1 + value2;
     }
 
     public static double subtract(double value1, double value2) {
         /**
-         * This method should take two values (double)
-         * and subtracts the first from the second.
+         * This method should take two values (double) and subtracts the first from the
+         * second.
          */
         return value1 - value2;
     }
 
     public double divide(double value1, double value2) {
         /**
-         * This method should take two values (double)
-         * and divides the first by the second.
+         * This method should take two values (double) and divides the first by the
+         * second.
          */
-        if(value2 == 0) {
+        if (value2 == 0) {
             displayError();
         }
         return value1 / value2;
@@ -38,8 +37,8 @@ public class Calculator {
 
     public static double multiply(double value1, double value2) {
         /**
-         * This method should take two values (double)
-         * and multiply the first with the second.
+         * This method should take two values (double) and multiply the first with the
+         * second.
          */
         return value1 * value2;
     }
@@ -74,16 +73,16 @@ public class Calculator {
 
     public static double sine(double value1) {
         /**
-         * This method will evaluate to an answer that is equal to the ratio
-         * of the side opposite a given angle (in a right triangle) to the hypotenuse.
+         * This method will evaluate to an answer that is equal to the ratio of the side
+         * opposite a given angle (in a right triangle) to the hypotenuse.
          */
         return Math.sin(value1);
     }
 
     public static double cosine(double value1) {
         /**
-         * This method will evaluate to an answer that is equal to the ratio
-         * of the side adjacent to an acute angle (in a right-angled triangle) to the hypotenuse.
+         * This method will evaluate to an answer that is equal to the ratio of the side
+         * adjacent to an acute angle (in a right-angled triangle) to the hypotenuse.
          */
         return Math.cos(value1);
     }
@@ -134,10 +133,10 @@ public class Calculator {
         /**
          * This will give the factorial for the provided value.
          */
-        if(value1 == 1) {
+        if (value1 == 1) {
             return 1;
         }
-        return value1 * (factorial(value1-1));
+        return value1 * (factorial(value1 - 1));
     }
 
     public static double inverseNaturalLog(double value1) {
@@ -154,6 +153,13 @@ public class Calculator {
         return Math.pow(10, value1);
     }
 
+    public static double cube(double value1) {
+        /**
+         * This will give the inverse for logarithms.
+         */
+        return value1 * value1 * value1;
+    }
+
     private void displayError() {
         /**
          * Checks if dividing by Zero
@@ -166,12 +172,4 @@ public class Calculator {
         commands.doTheThing();
     }
 
-
-
 }
-
-
-
-
-
-

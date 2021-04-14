@@ -8,32 +8,34 @@ import static org.junit.Assert.assertEquals;
  * This is the TEST document for the Calculator.java class
  */
 
-
 public class CalculatorSpec {
 
     Calculator calculator;
 
-    @Before public void setUp() {
+    @Before
+    public void setUp() {
         calculator = new Calculator();
     }
 
     double delta = 1e-15;
+
     @Test
     public void test$sum() {
         /**
-         * This method should take two values (double)
-         * and adds them together, returning the new value.
+         * This method should take two values (double) and adds them together, returning
+         * the new value.
          */
         double expectedValue = 5;
         double actualValue = calculator.sum(2, 3);
+        System.out.println("=======" + actualValue);
         assertEquals("This should evaluate to 5", expectedValue, actualValue, delta);
     }
 
     @Test
     public void test$subract() {
         /**
-         * This method should take two values (double)
-         * and subtracts the first from the second.
+         * This method should take two values (double) and subtracts the first from the
+         * second.
          */
         double expectedValue = 10;
         double actualValue = calculator.subtract(15, 5);
@@ -43,8 +45,8 @@ public class CalculatorSpec {
     @Test
     public void test$divide() {
         /**
-         * This method should take two values (double)
-         * and divides the first from the second.
+         * This method should take two values (double) and divides the first from the
+         * second.
          */
         double expectedValue = 10;
         double actualValue = calculator.divide(20, 2);
@@ -54,8 +56,8 @@ public class CalculatorSpec {
     @Test
     public void test$multiply() {
         /**
-         * This method should take two values (double)
-         * and multiply the first with the second.
+         * This method should take two values (double) and multiply the first with the
+         * second.
          */
         double expectedValue = 100;
         double actualValue = calculator.multiply(50, 2);
@@ -105,8 +107,8 @@ public class CalculatorSpec {
     @Test
     public void test$sin() {
         /**
-         * This method will evaluate to an answer that is equal to the ratio
-         * of the side opposite a given angle (in a right triangle) to the hypotenuse.
+         * This method will evaluate to an answer that is equal to the ratio of the side
+         * opposite a given angle (in a right triangle) to the hypotenuse.
          */
         double expectedValue = 0.8939966636005579;
         double actualVaue = calculator.sine(90);
@@ -116,8 +118,8 @@ public class CalculatorSpec {
     @Test
     public void test$cosin() {
         /**
-         * This method will evaluate to an answer that is equal to the ratio
-         * of the side adjacent to an acute angle (in a right-angled triangle) to the hypotenuse.
+         * This method will evaluate to an answer that is equal to the ratio of the side
+         * adjacent to an acute angle (in a right-angled triangle) to the hypotenuse.
          */
         double expectedValue = -0.4480736161291702;
         double actualValue = calculator.cosine(90);
@@ -215,32 +217,15 @@ public class CalculatorSpec {
         assertEquals("This should evaluate to 1000000000", expectedValue, actualValue, delta);
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @Test
+    public void test$cube() {
+        /**
+         * This will test cube of a number
+         * 
+         */
+        double expectedValue = 27.0;
+        double actualValue = calculator.cube(3);
+        assertEquals("This should evaluate to 27", expectedValue, actualValue, delta);
+    }
 
 }
